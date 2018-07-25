@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Jul 25 11:36:33 2018
-
-@author: viki.brookes
-"""
-
 import random
 import networkx as nx
 import numpy as np
@@ -16,6 +10,9 @@ def VB_watts_strogatz(nodes_list, degree, edge, t, seed=None):
     
     """Create a Watts–Strogatz small-world graph with empirical
     degree and edge-weight distributions. 
+    
+    Orginal base code
+    https://github.com/sleepokay/watts-strogatz
     
     Parameters
     ----------
@@ -168,14 +165,9 @@ def VB_watts_strogatz(nodes_list, degree, edge, t, seed=None):
                     pass
         else:
             pass
-    # This algorithm adds edges to k-nearesr neighbours to achieve degree distribution                    
+    # This algorithm adds edges to k-nearest neighbours to complete required degree distribution                    
     for j in range(0, max(nodes) + 1):
         m = 1
-        #print(m)
-        #print(j)
-        #print(G.degree(j))
-        #print(degrees[j])
-        #input("P")
         while G.degree(j) < degrees[j] and m <= max(nodes):
             if (j + m) <= max(nodes):
                 if G.degree(m) < degrees[m]:

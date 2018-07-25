@@ -11,9 +11,6 @@ def VB_watts_strogatz(nodes_list, degree, edge, t, seed=None):
     """Create a Watts–Strogatz small-world graph with empirical
     degree and edge-weight distributions. 
     
-    Orginal base code
-    https://github.com/sleepokay/watts-strogatz
-    
     Parameters
     ----------
     nodes_list : list of graph sizes (integers) if function is included in a 
